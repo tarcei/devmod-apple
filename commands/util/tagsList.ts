@@ -58,14 +58,14 @@ export const tags = {
     description: 'No job offers allowed on this server please. Free work is' +
       ' allowed, but not many people will want to work for free.',
   },
-  whynojobs: {
-    title: 'Why there are no Jobs',
-    color: blue,
-    description: 'In the past, there have been multiple cases of people' +
-      ' being scammed when taking a job with someone else on this server. We' +
-      ' do not want to be associated with that, so we have removed jobs' +
-      ' entirely.\n\nThanks for understanding.',
-  },
+  // whynojobs: {
+  //   title: 'Why there are no Jobs',
+  //   color: blue,
+  //   description: 'In the past, there have been multiple cases of people' +
+  //     ' being scammed when taking a job with someone else on this server. We' +
+  //     ' do not want to be associated with that, so we have removed jobs' +
+  //     ' entirely.\n\nThanks for understanding.',
+  // },
   sfw: {
     title: 'SFW (Safe for Work)',
     color: yellow,
@@ -138,14 +138,14 @@ export const tags = {
         inline: true,
       }],
   },
-  gbp: {
-    title: 'Good Boye Points',
-    color: green,
-    description: 'Good Boye Points (GBP) are the best way to tell if a user' +
-      ' has been a good addition to the server. You can get GBP only by the' +
-      ' generosity of the overlords (Admins & Mods). See how many you have with' +
-      ' `.gbp show`. Find the best people on the server with `.gbp top`',
-  },
+  // gbp: {
+  //   title: 'Good Boye Points',
+  //   color: green,
+  //   description: 'Good Boye Points (GBP) are the best way to tell if a user' +
+  //     ' has been a good addition to the server. You can get GBP only by the' +
+  //     ' generosity of the overlords (Admins & Mods). See how many you have with' +
+  //     ' `.gbp show`. Find the best people on the server with `.gbp top`',
+  // },
   roadmap: {
     title: 'Developer Roadmap',
     url: 'https://github.com/kamranahmedse/developer-roadmap',
@@ -290,14 +290,6 @@ export const tags = {
     title: '[x] Doubt',
     color: blue,
     image: { url: 'https://media.discordapp.net/attachments/174075418410876928/435482310612221993/doubt.jpg?width=400&height=228' },
-  },
-  fasy: {
-    color: blue,
-    image: { url: 'https://media.discordapp.net/attachments/174075418410876928/435887256843321354/loamy.jpg?width=401&height=84' },
-  },
-  dog: {
-    color: blue,
-    image: { url: 'https://cdn.discordapp.com/attachments/174075418410876928/436958508039012379/unknown.png' },
   },
   sqlinjection: {
     title: 'Bind your parameters to prevent SQL injection',
@@ -466,5 +458,13 @@ export const tags = {
     description: 'Search, research, and keep track of what you find. Even if you ' +
       'don\'t find a useful answer elsewhere, including links to related questions ' +
       'that haven\'t helped can help others better understand your question.',
+  },
+  fasy: {
+    color: blue,
+    image: { url: 'https://media.discordapp.net/attachments/174075418410876928/435887256843321354/loamy.jpg?width=401&height=84' },
+  },
+  dog: {
+    color: blue,
+    image: { url: 'https://cdn.discordapp.com/attachments/174075418410876928/436958508039012379/unknown.png' },
   },
 }

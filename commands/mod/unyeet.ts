@@ -8,7 +8,7 @@ import {
 
 const yeet: Command = {
   regex: /^(unyeet|unban)\s/,
-  usage: 'unyeet|unban <user> <reason>',
+  usage: 'unyeet <user> <reason>',
   description: 'Unbans a member.',
   permissions: ['BAN_MEMBERS'],
 

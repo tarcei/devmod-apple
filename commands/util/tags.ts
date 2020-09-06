@@ -11,7 +11,11 @@ const tagsCommand: Command = {
     await message.channel.send(embed({
       title: 'Tags',
       description: Object.entries(tags)
-        .map(([key, props]) => `\`${key}\` - ${props['title']}`)
+        .map(([key, props]) => {
+          return props['title']
+            ? `\`${key}\` - ${props['title']}`
+            : `\`${key}\``
+        })
         .join('\n'),
     }))
   },

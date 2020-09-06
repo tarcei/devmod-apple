@@ -6,7 +6,6 @@ import { red } from '../../utils/colors'
 
 import {
   TextChannel,
-  Message,
 } from 'discord.js'
 
 const buildRoles: Command = {

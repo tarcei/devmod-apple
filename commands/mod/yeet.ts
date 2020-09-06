@@ -6,7 +6,7 @@ import { TextChannel } from 'discord.js'
 
 const yeet: Command = {
   regex: /^(yeet|ban)\s/,
-  usage: 'yeet|ban <member> <reason>',
+  usage: 'yeet <member> <reason>',
   description: 'Bans a member.',
   permissions: ["BAN_MEMBERS"],
 
