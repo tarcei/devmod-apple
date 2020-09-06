@@ -14,6 +14,8 @@ const buildRoles: Command = {
   description: 'Build the role picker.',
   permissions: ['MANAGE_ROLES'],
 
+  // TODO: categorize assignable roles and split embeds manually
+
   async callback ({
     message,
     embed,
@@ -39,29 +41,16 @@ const buildRoles: Command = {
       await message.delete()
     }
 
-    const assignableRoleGroups = Object.entries(config.roles.assignable)
-      .reduce((acc: string[][][], value, index) => {
-        const newIndex = Math.floor(index / 15)
-        if (!acc[newIndex]) acc[newIndex] = []
+    for (const assignableEmbed of config.roles?.assignableEmbeds) {
+      const roles = Object.entries(assignableEmbed.items)
 
-        acc[newIndex].push(value)
+      console.log(roles)
 
-        return acc
-      }, [])
-
-    for (const index in assignableRoleGroups) {
-      const group = assignableRoleGroups[index]
-      
-      const message = index === '0' ? await roleChannel.send(embed({
-        title: 'Self Assignable Roles',
-        description: `Roles that have the word "Helper" are **pingable** and meant for if you want to help once pinged.` 
-          + `The non "Helper" roles are for the field you mainly dev in and have a special color.\n\n`
-          + group.map(([emoji, roleId]) => `${emoji} <@&${roleId}>`).join('\n'),
-      })) : await roleChannel.send(embed({
-        description: group.map(([emoji, roleId]) => `${emoji} <@&${roleId}>`).join('\n'),
+      const message = await roleChannel.send(embed({
+        description: (assignableEmbed.description || '') + roles.map(([emoji, roleId]) => `${emoji} <@&${roleId}>`).join('\n'),
       }))
 
-      for (const [emoji] of group) {
+      for (const [emoji] of roles) {
         await message.react(emoji)
       }
     }

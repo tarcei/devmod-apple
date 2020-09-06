@@ -39,6 +39,7 @@ export default ({
     regex, 
     callback, 
     noPrefix, 
+    usage,
     permissions, 
   } of commands as Command[]) {
     if (!noPrefix && !config.prefix.test(message.content)) return
@@ -47,12 +48,27 @@ export default ({
     const content = contentWithCommand.replace(regex, '')
     const args = content.split(' ').filter(string => /\S/.test(string))
 
-    if (!message.member.hasPermission(permissions, {
+    const hasPermission = !permissions || message.member.hasPermission(permissions, {
       checkAdmin: true,
       checkOwner: true,
-    })) return
+    })
 
     if (regex.test(contentWithCommand)) {
+      console.log({
+        usage,
+        hasPermission,
+      })
+
+      if (!hasPermission) {
+        await message.channel.send(embed({
+          title: `You don't have permission to use this command`,
+          color: red,
+          description: `\`${usage}\``,
+        }))
+
+        return
+      }
+
       try {
         await callback({
           message,

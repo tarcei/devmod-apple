@@ -11,8 +11,12 @@ export interface Config {
   roles?: {
     muted?: string
     
-    assignable?: {
-      [key: string]: string
-    }
+    assignableEmbeds?: {
+      [key: string]: unknown
+
+      items: {
+        [key: string]: string
+      } 
+    }[]
   }
 }
