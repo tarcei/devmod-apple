@@ -42,11 +42,12 @@ const buildRoles: Command = {
     }
 
     for (const assignableEmbed of config.roles?.assignableEmbeds) {
-      const roles = Object.entries(assignableEmbed.items)
+      const { items, ...restEmbed } = assignableEmbed
 
-      console.log(roles)
+      const roles = Object.entries(items)
 
       const message = await roleChannel.send(embed({
+        ...restEmbed,
         description: (assignableEmbed.description || '') + roles.map(([emoji, roleId]) => `${emoji} <@&${roleId}>`).join('\n'),
       }))
 
