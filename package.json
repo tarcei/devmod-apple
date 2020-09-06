@@ -1,0 +1,22 @@
+{
+  "name": "devmod",
+  "main": "bot/index.js",
+  "scripts": {
+    "start": "ts-node bot",
+    "dev": "ts-node-dev bot",
+    "lint": "eslint --fix --ext .ts @types bot commands"
+  },
+  "dependencies": {
+    "discord.js": "^12.3.1",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^14.6.4",
+    "@typescript-eslint/eslint-plugin": "^4.0.1",
+    "@typescript-eslint/parser": "^4.0.1",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.8.1",
+    "ts-node-dev": "^1.0.0-pre.62"
+  }
+}
