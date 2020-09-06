@@ -1,5 +1,6 @@
 import commands from '../commands'
 import { Command } from '@types'
+
 import { 
   devcordRed, 
   red, 
@@ -11,6 +12,8 @@ import {
 } from 'discord.js'
 
 import config from '../config'
+
+config.prefix = config.prefix || /^\./
 
 export default ({ 
   client,

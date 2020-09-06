@@ -2,7 +2,7 @@ import { Command } from '@types'
 import config from '../../config'
 import { red } from '../../utils/colors'
 import { TextChannel } from 'discord.js'
-// import { logChannelId } from '@config'
+// import { channels.log } from '@config'
 
 const yeet: Command = {
   regex: /^(yeet|ban)\s/,
@@ -64,7 +64,7 @@ const yeet: Command = {
         reason,
       })
 
-      const logChannel = await message.guild.channels.resolve(config.logChannelId) as TextChannel
+      const logChannel = await message.guild.channels.resolve(config.channels.log) as TextChannel
 
       await logChannel.send(embed({
         title: 'Yeet',

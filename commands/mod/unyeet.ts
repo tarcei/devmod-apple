@@ -4,7 +4,7 @@ import { red } from '../../utils/colors'
 import { 
   TextChannel,
 } from 'discord.js'
-// import { logChannelId } from '@config'
+// import { channels.log } from '@config'
 
 const yeet: Command = {
   regex: /^(unyeet|unban)\s/,
@@ -37,7 +37,7 @@ const yeet: Command = {
     try {
       await message.guild.members.unban(userId.replace(/<@!([0-9]+)>/, '$1'), reason)
 
-      const logChannel = await message.guild.channels.resolve(config.logChannelId) as TextChannel
+      const logChannel = await message.guild.channels.resolve(config.channels.log) as TextChannel
 
       await logChannel.send(embed({
         title: 'Unyeet',

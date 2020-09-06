@@ -49,7 +49,7 @@ const ping: Command = {
     try {
       await member.roles.remove(config.roles.muted)
 
-      const logChannel = await message.guild.channels.resolve(config.logChannelId) as TextChannel
+      const logChannel = await message.guild.channels.resolve(config.channels.log) as TextChannel
 
       await logChannel.send(embed({
         title: 'Unmute',
