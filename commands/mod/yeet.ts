@@ -2,10 +2,21 @@ import { Command } from '@types'
 import config from '../../config'
 import { red } from '../../utils/colors'
 import { TextChannel } from 'discord.js'
-// import { channels.log } from '@config'
+
+const yeetGifIds = [
+  'J1ABRhlfvQNwIOiAas',
+  'YnBthdanxDqhB99BGU',
+  'M9aM4NXS8q29W6Ia6S',
+  '11HkufsiNrBXK8',
+  '5PhDdJQd2yG1MvHzJ6',
+  'Izi543BvWEbAVXZLG6',
+  '4EEIsDmNJCiNcvAERef',
+  'KzoZUrq40MaazLgHsg',
+  'DvMHwFYLVHlZe',
+]
 
 const yeet: Command = {
-  regex: /^(yeet|ban)\s/,
+  regex: /^(yeet|ban)(\s|$)/,
   usage: 'yeet <member> <reason>',
   description: 'Bans a member.',
   permissions: ["BAN_MEMBERS"],
@@ -16,6 +27,12 @@ const yeet: Command = {
     embed, 
     client,
   }): Promise<void> {
+    if (args.length < 1) {
+      await message.channel.send('https://media.giphy.com/media/' + yeetGifIds[Math.floor(Math.random() * yeetGifIds.length)] + '/giphy.gif')
+      
+      return 
+    }
+
     const [userId, ...restArgs] = args
 
     const snowflake = userId.replace(/<@!([0-9]+)>/, '$1')

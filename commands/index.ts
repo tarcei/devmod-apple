@@ -6,6 +6,5 @@ export default [
   ...Util,
   ...Mod,
   ...Admin,
-  // TODO: yeet gif
   // TODO: help role ping
 ]
