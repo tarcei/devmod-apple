@@ -22,7 +22,8 @@ export default ({
 }) => async (message: Message): Promise<void> => {
   if (message.author.bot) return
 
-  const embed = (props) => ({
+  const embed = (props, messageProps?) => ({
+    ...messageProps,
     embed: {
       author: { 
         'icon_url': message.author.avatarURL(), 

@@ -17,7 +17,7 @@ export interface Command {
     content: string
     contentWithCommand: string
     args: string[]
-    embed (props): Record<string, unknown>
+    embed (props, messageProps?): Record<string, unknown>
     client: Client
   }): void | Promise<void>
 }
