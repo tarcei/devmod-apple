@@ -3,6 +3,7 @@ import Tag from './tag'
 import Tags from './tags'
 import Help from './help'
 import Report from './report'
+import LMGTFY from './lmgtfy'
 
 export default [
   Ping,
@@ -10,4 +11,5 @@ export default [
   Tags,
   Help,
   Report,
+  LMGTFY,
 ]

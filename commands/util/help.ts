@@ -2,7 +2,7 @@ import { Command } from '@types'
 
 import commands from '../'
 
-const ping: Command = {
+const help: Command = {
   regex: /^(help|\?|commands)$/,
   usage: 'help',
   description: 'Get a list of commands.',
@@ -23,4 +23,4 @@ const ping: Command = {
   },
 }
 
-export default ping
+export default help

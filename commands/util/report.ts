@@ -10,7 +10,7 @@ import {
   red,
 } from '../../utils/colors'
 
-const ping: Command = {
+const report: Command = {
   regex: /^(report)\s/,
   usage: 'report <member> <reason>',
   description: 'Reports a user.',
@@ -66,4 +66,4 @@ const ping: Command = {
   },
 }
 
-export default ping
+export default report

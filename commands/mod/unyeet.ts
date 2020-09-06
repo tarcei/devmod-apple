@@ -6,7 +6,7 @@ import {
 } from 'discord.js'
 // import { channels.log } from '@config'
 
-const yeet: Command = {
+const unyeet: Command = {
   regex: /^(unyeet|unban)\s/,
   usage: 'unyeet <member> <reason>',
   description: 'Unbans a member.',
@@ -61,4 +61,4 @@ const yeet: Command = {
   },
 }
 
-export default yeet
+export default unyeet

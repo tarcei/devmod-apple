@@ -10,7 +10,7 @@ import {
   red,
 } from '../../utils/colors'
 
-const ping: Command = {
+const unmute: Command = {
   regex: /^(unmute|unsilence)\s/,
   usage: 'unmute <member> <reason>',
   description: 'Unmutes a user.',
@@ -74,4 +74,4 @@ const ping: Command = {
   },
 }
 
-export default ping
+export default unmute

@@ -6,7 +6,7 @@ const ping: Command = {
   description: 'Ping the bot.',
 
   async callback ({ message, embed }): Promise<void> {
-    message.channel.send(embed({
+    await message.channel.send(embed({
       title: 'Pong!',
     }))
   },
