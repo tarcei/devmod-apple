@@ -18,18 +18,13 @@ const yeet: Command = {
   }): Promise<void> {
     const [userId, ...restArgs] = args
 
+    const snowflake = userId.replace(/<@!([0-9]+)>/, '$1')
     const reason = restArgs.join(' ')
-
-    const user = await client.users.fetch(
-      userId.replace(/<@!([0-9]+)>/, '$1'),
-    )
-
+    const user = await client.users.fetch(snowflake)
     const name = `${user.tag} (${user.id})`
 
     try {
-      const member = await message.guild.members.fetch(
-        userId.replace(/<@!([0-9]+)>/, '$1'),
-      )
+      const member = await message.guild.members.fetch(snowflake)
 
       if (!member.bannable) {
         await message.channel.send(embed({
@@ -60,7 +55,7 @@ const yeet: Command = {
     })).catch(console.error)
 
     try {
-      await message.guild.members.ban(userId, {
+      await message.guild.members.ban(snowflake, {
         reason,
       })
 
@@ -68,7 +63,7 @@ const yeet: Command = {
 
       await logChannel.send(embed({
         title: 'Yeet',
-        description: `Member has been yeeted${reasonString}`,
+        description: `<@${user.id}> has been yeeted${reasonString}`,
         
         footer: {
           "icon_url": user.avatarURL(),

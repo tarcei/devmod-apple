@@ -12,7 +12,7 @@ import {
 
 const ping: Command = {
   regex: /^(mute|silence)\s/,
-  usage: 'mute <userID> <reason>',
+  usage: 'mute <member> <reason>',
   description: 'Mutes a user.',
   permissions: ['MANAGE_MESSAGES'],
 
@@ -31,13 +31,11 @@ const ping: Command = {
     }
 
     const [userId, ...restArgs] = args
-
+    
+    const snowflake = userId.replace(/<@!([0-9]+)>/, '$1')
     const reason = restArgs.join(' ')
-
-    const member = await message.guild.members.fetch(userId.replace(/<@!([0-9]+)>/, '$1'))
-
+    const member = await message.guild.members.fetch(snowflake)
     const { user } = member
-
     const name = `${user.tag} (${user.id})`
 
     const reasonString = reason
@@ -53,7 +51,7 @@ const ping: Command = {
 
       await logChannel.send(embed({
         title: 'Mute',
-        description: `Member has been muted${reasonString}`,
+        description: `<@${user.id}> has been muted${reasonString}`,
         
         footer: {
           "icon_url": user.avatarURL(),

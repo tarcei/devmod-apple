@@ -6,8 +6,8 @@ export default [
   ...Util,
   ...Mod,
   ...Admin,
-  // TODO: reports
   // TODO: lmgtfy
   // TODO: mdn
   // TODO: yeet gif
+  // TODO: help role ping
 ]

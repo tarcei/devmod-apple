@@ -8,7 +8,7 @@ import {
 
 const yeet: Command = {
   regex: /^(unyeet|unban)\s/,
-  usage: 'unyeet <user> <reason>',
+  usage: 'unyeet <member> <reason>',
   description: 'Unbans a member.',
   permissions: ['BAN_MEMBERS'],
 
@@ -19,13 +19,10 @@ const yeet: Command = {
     embed, 
   }): Promise<void> {
     const [userId, ...restArgs] = args
-
+    
+    const snowflake = userId.replace(/<@!([0-9]+)>/, '$1')
     const reason = restArgs.join(' ')
-
-    const user = await client.users.fetch(
-      userId.replace(/<@!([0-9]+)>/, '$1'),
-    )
-
+    const user = await client.users.fetch(snowflake)
     const name = `${user.tag} (${user.id})`
 
     const reasonString = reason
@@ -35,13 +32,13 @@ const yeet: Command = {
     message.delete().catch(console.error)
 
     try {
-      await message.guild.members.unban(userId.replace(/<@!([0-9]+)>/, '$1'), reason)
+      await message.guild.members.unban(snowflake, reason)
 
       const logChannel = await message.guild.channels.resolve(config.channels.log) as TextChannel
 
       await logChannel.send(embed({
         title: 'Unyeet',
-        description: `Member has been unyeeted${reasonString}`,
+        description: `<@${user.id}> has been unyeeted${reasonString}`,
         
         footer: {
           "icon_url": user.avatarURL(),
