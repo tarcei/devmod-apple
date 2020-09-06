@@ -18,7 +18,7 @@ const buildRoles: Command = {
     message,
     embed,
   }): Promise<void> {
-    if (!config.channels.roles) {
+    if (!config.channels?.roles) {
       await message.channel.send(embed({
         title: '`roles` channel not configured',
         color: red,

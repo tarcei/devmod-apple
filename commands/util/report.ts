@@ -20,7 +20,7 @@ const report: Command = {
     embed, 
     args,
   }): Promise<void> {
-    if (!config.channels.reports) {
+    if (!config.channels?.reports) {
       message.channel.send(embed({
         title: '`reports` channel not configured.',
         color: red,

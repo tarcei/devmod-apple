@@ -59,6 +59,8 @@ const yeet: Command = {
         reason,
       })
 
+      if (!config.channels?.log) return
+
       const logChannel = await message.guild.channels.resolve(config.channels.log) as TextChannel
 
       await logChannel.send(embed({

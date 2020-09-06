@@ -21,7 +21,7 @@ const mute: Command = {
     embed, 
     args,
   }): Promise<void> {
-    if (!config.roles.muted) {
+    if (!config.roles?.muted) {
       message.channel.send(embed({
         title: '`muted` role not configured.',
         color: red,
@@ -46,6 +46,8 @@ const mute: Command = {
 
     try {
       await member.roles.add(config.roles.muted)
+
+      if (!config.channels?.log) return
 
       const logChannel = await message.guild.channels.resolve(config.channels.log) as TextChannel
 
