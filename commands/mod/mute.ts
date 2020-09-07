@@ -39,7 +39,7 @@ const mute: Command = {
     const name = `${user.tag} (${user.id})`
 
     const reasonString = reason
-      ? ` for \`${reason}\`.`
+      ? ` for ${reason}.`
       : `.`
 
     message.delete().catch(console.error)

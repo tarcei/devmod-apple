@@ -61,7 +61,7 @@ const yeet: Command = {
     }
 
     const reasonString = reason
-      ? ` for \`${reason}\`.`
+      ? ` for ${reason}.`
       : `.`
 
     message.delete().catch(console.error)
