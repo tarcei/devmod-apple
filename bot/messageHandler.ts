@@ -55,7 +55,9 @@ export default ({
 
     if (regex.test(contentWithCommand)) {
       console.log({
+        user: message.author.tag,
         usage,
+        content,
         hasPermission,
       })
 

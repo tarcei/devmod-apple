@@ -5,6 +5,8 @@ import Help from './help'
 import Report from './report'
 import LMGTFY from './lmgtfy'
 import MDN from './mdn'
+import HelpPing from './helpPing'
+import Pingable from './pingable'
 
 export default [
   Ping,
@@ -14,4 +16,6 @@ export default [
   Report,
   LMGTFY,
   MDN,
+  HelpPing,
+  Pingable,
 ]

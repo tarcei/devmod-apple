@@ -7,4 +7,5 @@ export default [
   ...Mod,
   ...Admin,
   // TODO: help role ping
+  // TODO: warn command
 ]

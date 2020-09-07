@@ -6,11 +6,17 @@ export interface Config {
     log?: string
     roles?: string
     reports?: string
+
+    help?: string[]
   }
 
   roles?: {
     muted?: string
     
+    pingable?: {
+      [key: string]: string
+    }
+
     assignableEmbeds?: {
       [key: string]: unknown
 
