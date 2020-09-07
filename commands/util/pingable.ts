@@ -1,6 +1,7 @@
 import { Command } from '@types'
 
 import config from '../../config'
+import { red } from '../../utils/colors'
 
 const pingable: Command = {
   regex: /^pingable$/,
@@ -8,6 +9,17 @@ const pingable: Command = {
   description: 'List all pingable roles',
 
   async callback ({ message, embed }) {
+    if (!config.roles?.pingable) {
+      await message.channel.send(embed({
+        title: 'Pingable roles aren\'t configured.',
+        color: red,
+      }))
+
+      return
+    }
+
+    await message.delete()
+
     await message.channel.send(embed({
       title: 'Pingable Roles',
       description: Object
