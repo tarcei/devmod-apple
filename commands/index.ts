@@ -6,5 +6,4 @@ export default [
   ...Util,
   ...Mod,
   ...Admin,
-  // TODO: warn command
 ]
