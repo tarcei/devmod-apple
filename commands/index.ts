@@ -6,4 +6,5 @@ export default [
   ...Util,
   ...Mod,
   ...Admin,
+  // TODO: prune
 ]
