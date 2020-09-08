@@ -459,6 +459,10 @@ export const tags = {
       'don\'t find a useful answer elsewhere, including links to related questions ' +
       'that haven\'t helped can help others better understand your question.',
   },
+  helproles: {
+    title: 'Help Roles',
+    description: 'Use the command `.ping <role>` to ping a help role, and `.pingable` to get a list of help roles. You may only ping once an hour, and twice a day.',
+  },
   fasy: {
     color: blue,
     image: { url: 'https://media.discordapp.net/attachments/174075418410876928/435887256843321354/loamy.jpg?width=401&height=84' },
