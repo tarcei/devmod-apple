@@ -46,8 +46,6 @@ const helpPing: Command = {
 
     if (!pings[message.author.id]) pings[message.author.id] = []
 
-    console.log(pings[message.author.id])
-
     const hour = 3600000
 
     const hourlyPings = pings[message.author.id].filter(({ date }) => {
@@ -57,8 +55,6 @@ const helpPing: Command = {
     const dailyPings = pings[message.author.id].filter(({ date }) => {
       return Date.now() - date < hour * 24
     })
-
-    console.log(hourlyPings, dailyPings)
 
     if (hourlyPings.length >= 1) {
       await message.channel.send(embed({
