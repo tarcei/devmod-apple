@@ -8,7 +8,7 @@ const pings = {}
 const helpPing: Command = {
   regex: /^ping\s/,
   usage: 'ping <role>',
-  description: 'Ping one of the help roles (without the `help-` prefix)',
+  description: 'Ping one of the help roles (without the `help-` prefix). You can ping help roles to notify helpers about your question. You may only ping once per hour, and twice daily.',
 
   async callback ({ 
     message, 

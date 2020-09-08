@@ -6,7 +6,7 @@ import { red } from '../../utils/colors'
 const pingable: Command = {
   regex: /^pingable$/,
   usage: 'pingable',
-  description: 'List all pingable roles',
+  description: 'List all pingable roles.',
 
   async callback ({ message, embed }) {
     if (!config.roles?.pingable) {
