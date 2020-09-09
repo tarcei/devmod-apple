@@ -33,7 +33,7 @@ const report: Command = {
 
     const reason = restArgs.join(' ')
 
-    const member = await message.guild.members.fetch(userId.replace(/<@!([0-9]+)>/, '$1'))
+    const member = await message.guild.members.fetch(userId.replace(/<@!?([0-9]+)>/, '$1'))
 
     const { user } = member
 

@@ -35,7 +35,7 @@ const yeet: Command = {
 
     const [userId, ...restArgs] = args
 
-    const snowflake = userId.replace(/<@!([0-9]+)>/, '$1')
+    const snowflake = userId.replace(/<@!?([0-9]+)>/, '$1')
     const reason = restArgs.join(' ')
     const user = await client.users.fetch(snowflake)
     const name = `${user.tag} (${user.id})`

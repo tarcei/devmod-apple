@@ -23,7 +23,7 @@ const mute: Command = {
   }): Promise<void> {
     const [userId, ...restArgs] = args
     
-    const snowflake = userId.replace(/<@!([0-9]+)>/, '$1')
+    const snowflake = userId.replace(/<@!?([0-9]+)>/, '$1')
     const reason = restArgs.join(' ')
     const member = await message.guild.members.fetch(snowflake)
     const { user } = member
