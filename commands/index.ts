@@ -6,4 +6,5 @@ export default [
   ...Util,
   ...Mod,
   ...Admin,
+  // test
 ]
