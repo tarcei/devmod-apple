@@ -4,7 +4,7 @@
  */
 
 import {
-  blue, green, orange, purple, red, yellow, 
+  blue, green, orange, purple, red, yellow,
 } from '../../utils/colors'
 
 export const tags = {
@@ -28,10 +28,8 @@ export const tags = {
     color: red,
     description: 'Instead of asking to ask, ask your question instead.' +
       ' People can help you better if they know your question.\n\n' +
-      'Example: "Hey can anyone help me with some JS?" & "Anyone good with' +
-      ' JS?" => "I\'m having trouble adding a class to a div using JS. Can I' +
-      ' have some help?"\n\n' +
-      '[How do I ask a good question?](https://stackoverflow.com/help/how-to-ask)',
+      '[How do I ask a good question?](https://stackoverflow.com/help/how-to-ask)\n' +
+      '[Don\'t ask to ask, just ask](https://sol.gfxile.net/dontask.html)',
   },
   ideas: {
     title: 'Project Ideas',
