@@ -7,19 +7,21 @@ const tagCommand: Command = {
   usage: 'tag <tag>',
   description: 'Post a tag to the current channel.',
 
-  async callback ({ message, embed, args }): Promise<void> {
+  async callback({ message, embed, args }): Promise<void> {
     const [tag, ...restArgs] = args
 
-    // await message.delete()
+    await message.delete()
 
     if (!tags[tag]) {
       await message.channel.send(embed({
-        description: 'This tag doesn\'t exist. Try `.tags` to get a list.',
+        title: tag,
+        description: 'This tag doesn\'t exist. Use `.tags` to get a list of available tags.',
         color: red,
       }))
     } else {
       await message.channel.send(embed({
         ...tags[tag],
+        footer: { text: `.tag ${tag}` },
       }, {
         content: restArgs.join(' '),
       }))
