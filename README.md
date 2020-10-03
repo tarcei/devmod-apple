@@ -1,6 +1,6 @@
 # devmod-apple
 ## prerequisites
-- node.js 14+
+- node.js 12+
 
 ## installation
 ```
@@ -12,6 +12,7 @@ npm install
 ## scripts
 ```bash
 npm run start # run bot in production mode
-npm run dev # run bot in development mode
+npm run dev # run bot in development mode using ts-node
+npm run dev-nodemon # run bot in development mode using tsc and nodemon
 npm run lint # lint and fix
 ```
