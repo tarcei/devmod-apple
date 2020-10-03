@@ -1,5 +1,5 @@
 import { Command } from '@types'
-
+import { red } from '../../utils/colors'
 import { tags } from './tagsList'
 
 const tagCommand: Command = {
@@ -10,13 +10,20 @@ const tagCommand: Command = {
   async callback ({ message, embed, args }): Promise<void> {
     const [tag, ...restArgs] = args
 
-    await message.delete()
+    // await message.delete()
 
-    await message.channel.send(embed({
-      ...tags[tag],
-    }, {
-      content: restArgs.join(' '),
-    }))
+    if (!tags[tag]) {
+      await message.channel.send(embed({
+        description: 'This tag doesn\'t exist. Try `.tags` to get a list.',
+        color: red,
+      }))
+    } else {
+      await message.channel.send(embed({
+        ...tags[tag],
+      }, {
+        content: restArgs.join(' '),
+      }))
+    }
   },
 }
 
