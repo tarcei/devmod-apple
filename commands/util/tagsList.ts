@@ -31,6 +31,17 @@ export const tags = {
       '[How do I ask a good question?](https://stackoverflow.com/help/how-to-ask)\n' +
       '[Don\'t ask to ask, just ask](https://sol.gfxile.net/dontask.html)',
   },
+  loweffort: {
+    title: 'Low effort',
+    color: red,
+    description: 'Low effort posts will result in low effort responses. ' +
+      'Please make sure you have researched your topic and have tried some solutions ' +
+      'before posting it here. Devcord is not your 24/7 live support.\n' +
+      'Continuous low effort posting will result in punitive action.\n\n' +
+      'Additionally, use some time to review the following resources: \n' +
+      '[Google](https://google.com)\n' +
+      '[How to ask a question?](https://stackoverflow.com/help/how-to-ask)',
+  },
   ideas: {
     title: 'Project Ideas',
     color: blue,
@@ -56,14 +67,6 @@ export const tags = {
     description: 'No job offers allowed on this server please. Free work is' +
       ' allowed, but not many people will want to work for free.',
   },
-  // whynojobs: {
-  //   title: 'Why there are no Jobs',
-  //   color: blue,
-  //   description: 'In the past, there have been multiple cases of people' +
-  //     ' being scammed when taking a job with someone else on this server. We' +
-  //     ' do not want to be associated with that, so we have removed jobs' +
-  //     ' entirely.\n\nThanks for understanding.',
-  // },
   sfw: {
     title: 'SFW (Safe for Work)',
     color: yellow,
@@ -136,14 +139,6 @@ export const tags = {
         inline: true,
       }],
   },
-  // gbp: {
-  //   title: 'Good Boye Points',
-  //   color: green,
-  //   description: 'Good Boye Points (GBP) are the best way to tell if a user' +
-  //     ' has been a good addition to the server. You can get GBP only by the' +
-  //     ' generosity of the overlords (Admins & Mods). See how many you have with' +
-  //     ' `.gbp show`. Find the best people on the server with `.gbp top`',
-  // },
   roadmap: {
     title: 'Developer Roadmap',
     url: 'https://github.com/kamranahmedse/developer-roadmap',
