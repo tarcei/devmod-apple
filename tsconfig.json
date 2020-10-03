@@ -2,7 +2,7 @@
     "compilerOptions": {
       "module": "commonjs",
       "lib": ["ESNext", "DOM"],
-      "target": "ESNext",
+      "target": "ES6",
       "baseUrl": ".",
       "paths": {
         "@types/*": ["@types/*"],
