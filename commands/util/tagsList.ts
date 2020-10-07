@@ -464,4 +464,10 @@ export const tags = {
     color: blue,
     image: { url: 'https://cdn.discordapp.com/attachments/174075418410876928/436958508039012379/unknown.png' },
   },
+  nofromme: {
+    color: blue,
+    image: {
+      url: 'https://cdn.discordapp.com/attachments/763318123247173632/763417022440407040/bc6da3faeae3fcb81fc9201dbc8e588c--terrible-memes-tumblr-stuff.png',
+    },
+  },
 }
