@@ -6,7 +6,7 @@ import {
 import config from '../config'
 
 export default async (reaction: MessageReaction, member: GuildMember): Promise<void> => {
-  if (reaction.message.author.bot || !config.channels?.roles || !config.roles?.assignableEmbeds || reaction.message.channel.id !== config.channels?.roles) return
+  if (member.user.bot || !config.channels?.roles || !config.roles?.assignableEmbeds || reaction?.message.channel.id !== config.channels?.roles) return
 
   const roles = {}
 
