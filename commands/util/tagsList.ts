@@ -470,4 +470,9 @@ export const tags = {
       url: 'https://cdn.discordapp.com/attachments/763318123247173632/763417022440407040/bc6da3faeae3fcb81fc9201dbc8e588c--terrible-memes-tumblr-stuff.png',
     },
   },
+  rust: {
+    color: orange,
+    title: 'Did someone say Rust?',
+    image: { url: 'https://i.imgur.com/mczIGZK.jpg' }
+  }
 }
