@@ -27,12 +27,16 @@ const buildRoles: Command = {
       const created = new Date(msg.createdTimestamp)
       const attachments = Array.from(msg.attachments.values())
 
+      let cleanContent = msg.cleanContent.length > 0 ? msg.cleanContent : ''
+
+      cleanContent = '\n' + cleanContent.split('```')[0] + '\n```\n' + cleanContent.split('```')[1] + '\n```'
+
       let data = `**${msg.author.id}** [${created.toUTCString()}]:\n ${msg.cleanContent}`
       msg?.embeds.length > 0 ? msg.embeds.forEach(embed => {
-        data += ` \`\`\` 
-        title: ${embed.title}
-        description: ${embed.description}
-        ${embed?.image?.proxyURL ? ` image: ${embed?.image?.proxyURL} ` : ''}
+        data += `\n \`\`\` 
+title: ${embed.title}
+description: ${embed.description}
+${embed?.image?.proxyURL ? ` image: ${embed?.image?.proxyURL} ` : ''}
 \`\`\` 
       `
       }) : ''
