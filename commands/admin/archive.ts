@@ -1,0 +1,68 @@
+import { Command } from '@types'
+import * as fs from 'fs'
+
+import {
+  DMChannel,
+  Message,
+  NewsChannel,
+  TextChannel,
+} from 'discord.js'
+
+const buildRoles: Command = {
+  regex: /^archive\b/,
+  usage: 'archive',
+  description: 'archives the current channel into a markdown file',
+  permissions: ['ADMINISTRATOR'],
+
+  async callback({
+    message,
+    embed,
+  }): Promise<void> {
+    const currentChannel = message.channel
+
+    const msgs: Message[] = await getMessages(currentChannel, message, [])
+    const time = new Date().getTime()
+
+    for (const msg of msgs) {
+      const created = new Date(msg.createdTimestamp)
+      const attachments = Array.from(msg.attachments.values())
+
+      let data = `**${msg.author.id}** [${created.toUTCString()}]: ${msg.cleanContent}`
+      msg?.embeds.length > 0 ? msg.embeds.forEach(embed => {
+        data += ` \`\`\` 
+        title: ${embed.title}
+        description: ${embed.description}
+        ${embed?.image?.proxyURL ? ` image: ${embed?.image?.proxyURL} ` : ''}
+        \`\`\` 
+      `
+      }) : ''
+      attachments.length > 0 ? data += `Attachments: ${attachments.map(a => a.proxyURL).join(', ')}` : ''
+
+      fs.appendFileSync(`./archives/${currentChannel.id}-${time}.md`, `${data}\n\n`)
+    }
+
+    await message.channel.send(embed({
+      title: 'Archive',
+      description: 'Archived the current channel.',
+    }))
+
+  },
+}
+
+const getMessages = async (channel: (TextChannel | DMChannel | NewsChannel), lastMessage: Message, pastMessages: Message[]) => {
+
+  const msgs = await channel.messages.fetch({
+    before: lastMessage.id,
+    limit: 100,
+  })
+
+  if (Array.from(msgs.values()).length === 0)
+    return pastMessages
+
+  pastMessages.push(...Array.from(msgs.values()))
+
+  return await getMessages(channel, msgs.last(), pastMessages)
+
+}
+
+export default buildRoles
