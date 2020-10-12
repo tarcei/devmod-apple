@@ -20,7 +20,7 @@ const buildRoles: Command = {
   }): Promise<void> {
     const currentChannel = message.channel
 
-    const msgs: Message[] = await getMessages(currentChannel, message, [])
+    const msgs: Message[] = (await getMessages(currentChannel, message, [])).reverse()
     const time = new Date().getTime()
 
     for (const msg of msgs) {
