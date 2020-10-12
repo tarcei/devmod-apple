@@ -20,11 +20,25 @@ const buildRoles: Command = {
   }): Promise<void> {
     const currentChannel = message.channel
 
-    const msgs = await getMessages(currentChannel, message, [])
+    const msgs: Message[] = await getMessages(currentChannel, message, [])
     const time = new Date().getTime()
+
     for (const msg of msgs) {
       const created = new Date(msg.createdTimestamp)
-      fs.appendFileSync(`./archives/${currentChannel.id}-${time}.md`, `**${msg.author.username}** [${created.toUTCString()}]: ${msg.cleanContent}\n\n`)
+      const attachments = Array.from(msg.attachments.values())
+
+      let data = `**${msg.author.id}** [${created.toUTCString()}]: ${msg.cleanContent}`
+      msg?.embeds.length > 0 ? msg.embeds.forEach(embed => {
+        data += ` \`\`\` 
+        title: ${embed.title}
+        description: ${embed.description}
+        ${embed?.image?.proxyURL ? ` image: ${embed?.image?.proxyURL} ` : ''}
+        \`\`\` 
+      `
+      }) : ''
+      attachments.length > 0 ? data += `Attachments: ${attachments.map(a => a.proxyURL).join(', ')}` : ''
+
+      fs.appendFileSync(`./archives/${currentChannel.id}-${time}.md`, `${data}\n\n`)
     }
 
     await message.channel.send(embed({
