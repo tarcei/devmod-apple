@@ -473,6 +473,11 @@ export const tags = {
   rust: {
     color: orange,
     title: 'Did someone say Rust?',
-    image: { url: 'https://i.imgur.com/mczIGZK.jpg' }
-  }
+    image: { url: 'https://i.imgur.com/mczIGZK.jpg' },
+  }, 
+  donodohurtonme : {
+    color: red,
+    title: 'DO NO DO HURT ON ME',
+    image: { url: 'https://i.imgur.com/yJ8h0KY.png' },
+  },
 }
