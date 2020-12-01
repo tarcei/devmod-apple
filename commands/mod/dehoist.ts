@@ -16,7 +16,8 @@ const dehoist: Command = {
     guild.members.cache.each(member => {
       if (!member.manageable) return
 
-      if (member.nickname.startsWith('!')) {
+
+      if (member.nickname && member.nickname.startsWith('!')) {
         let nickname = member.nickname.split('')
           .slice(1)
           .join()
