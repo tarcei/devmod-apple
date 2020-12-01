@@ -5,6 +5,7 @@ import Unmute from './unmute'
 import Warn from './warn'
 import Prune from './prune'
 import Kick from './kick'
+import Dehoist from './dehoist'
 
 export default [
   Yeet,
@@ -14,4 +15,5 @@ export default [
   Warn,
   Prune,
   Kick,
+  Dehoist,
 ]
