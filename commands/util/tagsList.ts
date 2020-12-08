@@ -8,6 +8,16 @@ import {
 } from '../../utils/colors'
 
 export const tags = {
+  devops: {
+    title: 'DevOps',
+    color: green,
+    description: [
+      'DevOps is a way of working to combine joint effort form Development and Operations teams (hence Dev - Ops.)',
+      'It is commonly associated with cloud native technologies such as Kubernetes, Containers, and CI/CD practices et al.\n',
+      '[Martin Fowler\'s DevOps Culture](https://www.martinfowler.com/bliki/DevOpsCulture.html)',
+    ].join('\n')
+  },
+  low
   oss: {
     title: 'First Time Contributors',
     color: blue,
