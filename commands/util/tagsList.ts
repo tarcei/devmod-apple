@@ -17,7 +17,6 @@ export const tags = {
       '[Martin Fowler\'s DevOps Culture](https://www.martinfowler.com/bliki/DevOpsCulture.html)',
     ].join('\n')
   },
-  low
   oss: {
     title: 'First Time Contributors',
     color: blue,
