@@ -104,21 +104,11 @@ export const tags = {
     fields: [
       {
         name: 'To directly post code into Discord, type:',
-        value: '\\`\\`\\`\n// code\nconsole.log(\'I have no' +
-          ' language.\')\n\\`\\`\\`',
+        value: '\\`\\`\\`js\nconsole.log(\'hello this is js\')\n\\`\\`\\`' +
+          '\nYou can replace `js` with other language names like `html`, `css` or even `jsx`. [Click here](https://support.discord.com/hc/en-us/articles/210298617) for more information.',
       }, {
-        name: 'For syntax highlighting replace lang with the language (js,' +
-          ' css, html, etc.):',
-        value: '\\`\\`\\`js\nconsole.log(\'hello this is js\')\n\\`\\`\\`',
-      }, {
-        name: 'How the first will look:',
-        value: '```LANGUAGE\n// code\nconsole.log(\'I have no language.\')\n```',
-      }, {
-        name: 'How it will look with highlighting:',
+        name: 'How it will look:',
         value: '```js\nconsole.log(\'hello this is js\')\n```',
-      }, {
-        name: 'More Information',
-        value: 'You can find more information on code blocks from [Discord Support](https://support.discordapp.com/hc/en-us/articles/210298617-Markdown-Text-101-Chat-Formatting-Bold-Italic-Underline-)',
       },
     ],
   },
@@ -128,25 +118,15 @@ export const tags = {
     description: 'Post your code online. Here are some options:',
     fields: [
       {
-        name: 'CodePen (https://codepen.io/)',
-        value: 'CodePen is a nice place to post your code online.',
-        inline: true,
+        name: 'https://codesandbox.io - Supports node modules',
       }, {
-        name: 'JSFiddle (https://jsfiddle.net/)',
-        value: 'JSFiddle is also a nice place to post your code online.',
-        inline: true,
-      },
-      {
-        name: 'GitHub (https://github.com)',
-        value: 'GitHub is a great place to post the code for full projects.',
-        inline: true,
-      },
-      {
-        name: 'CodeSandbox (https://codesandbox.io/)',
-        value: 'CodeSandbox is a great place to play around with a full node' +
-          ' environment without having it locally.',
-        inline: true,
-      }],
+        name: 'https://github.com - For full projects',
+      }, {
+        name: 'https://codepen.io - Great for beginners',
+      }, {
+        name: 'https://jsfiddle.net - Similar to codepen',
+      }
+    ],
   },
   roadmap: {
     title: 'Developer Roadmap',
@@ -266,7 +246,7 @@ export const tags = {
           ' application logic as your rect webapp.',
       },
       {
-        name: 'Angular 5',
+        name: 'Angular',
         value: 'I do not know as much about Angular as I do Vue and React,' +
           ' (please make a PR if you have more knowledge), I do know that to' +
           ' use Angular, it\'s almost required to use typescript. Angular is a' +
@@ -282,11 +262,8 @@ export const tags = {
     },
   },
   invite: {
-    title: 'Invite Link',
+    title: 'https://discord.gg/devcord',
     color: blue,
-    url: 'https://discord.me/devcord',
-    description: 'You can invite people with' +
-      ' this link: [https://discord.me/devcord](https://discord.me/devcord).',
   },
   doubt: {
     title: '[x] Doubt',
@@ -334,7 +311,7 @@ export const tags = {
       },
     ],
   },
-  flex: {
+  flexbox: {
     title: 'Flexbox',
     color: purple,
     description: 'The Flexible Box Module, usually referred to as flexbox, was' +
@@ -453,13 +430,6 @@ export const tags = {
         name: '[Using Gradients](https://www.smashingmagazine.com/2018/01/gradients-user-experience-design/)',
       },
     ],
-  },
-  research: {
-    color: red,
-    title: 'Research before asking',
-    description: 'Search, research, and keep track of what you find. Even if you ' +
-      'don\'t find a useful answer elsewhere, including links to related questions ' +
-      'that haven\'t helped can help others better understand your question.',
   },
   helproles: {
     title: 'Help Roles',
