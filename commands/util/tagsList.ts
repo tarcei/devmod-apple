@@ -142,11 +142,8 @@ export const tags = {
     image: { url: 'https://cdn.discordapp.com/attachments/287200463382642689/433326230495035412/1447912710960.jpg' },
   },
   editor: {
-    title: 'IDEs & Text Editors',
+    title: 'IDEs & Code Editors',
     color: blue,
-    description: 'There are many different ways to edit code, from code' +
-      ' editors to Integrated Development Environments ("IDEs"). Here are some' +
-      ' differences between the two and some examples of each:',
     fields: [
       {
         name: 'IDEs',
@@ -175,12 +172,6 @@ export const tags = {
           ' They also include a plugin system. [Download](https://visualstudio.microsoft.com/)',
       },
       {
-        name: 'NetBeans',
-        value: 'I honestly don\'t know much about NetBeans, having never' +
-          ' used it. If you know more make a PR on the DevMod repo. I do know' +
-          ' that it is a Java IDE. [Download](https://netbeans.org/)',
-      },
-      {
         name: 'Atom',
         value: 'Atom is a code editor based on web technology. It\'s made by' +
           ' GitHub, and has a massive community, with plugins for everything. [Download](https://atom.io/)',
@@ -202,12 +193,6 @@ export const tags = {
         value: 'Vim is a command line text editor with plugins that can do' +
           ' pretty much anything. It is largely popular, but has a learning' +
           ' curve before you can be productive in it. [Download](https://www.vim.org/)',
-      },
-      {
-        name: 'Brackets',
-        value: 'Brackets is also based on web tech, and has a live reload' +
-          ' feature that allows you to view your website live. Many other' +
-          ' editors have this feature, but few work as smoothly as this one. [Download](http://brackets.io/)',
       },
       {
         name: 'Notepad++',
