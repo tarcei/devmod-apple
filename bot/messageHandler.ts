@@ -22,9 +22,9 @@ export default ({
 }) => async (message: Message): Promise<void> => {
   if (message.author.bot) return
 
-  if (message.author.id === '214807903129960448') {
-    message.react('751029481677914122')
-  }
+ // if (message.author.id === '214807903129960448') {
+ //   message.react('751029481677914122')
+ // }
 
   const embed = (props, messageProps?) => ({
     ...messageProps,
