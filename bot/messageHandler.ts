@@ -22,7 +22,7 @@ export default ({
 }) => async (message: Message): Promise<void> => {
   if (message.author.bot) return
 
-  if (message.author.id === '214807903129960448' && Math.random() < 0.05) {
+  if (message.author.id === '214807903129960448' && Math.random() < 0.15) {
     const reactionIds = ['788714191669821470', '609008767446548480', '739206458721435720', '803160041221259264']
     message.react(reactionIds[Math.floor(Math.random() * reactionIds.length)])
   }
