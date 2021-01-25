@@ -22,8 +22,9 @@ export default ({
 }) => async (message: Message): Promise<void> => {
   if (message.author.bot) return
 
- if (message.author.id === '214807903129960448') {
-    message.react('788714191669821470')
+ if (message.author.id === '214807903129960448' && Math.radom() < 0.5) {
+   const reactionIds = ['788714191669821470', '788714191669821470', '803160041221259264']
+   message.react(reactionIds[Math.floor(Math.random() * reactionIds.length)])
  }
 
   const embed = (props, messageProps?) => ({
