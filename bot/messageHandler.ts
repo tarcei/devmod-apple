@@ -26,6 +26,26 @@ export default ({
     const reactionIds = ['788714191669821470', '609008767446548480', '739206458721435720', '803160041221259264', '751029481677914122', '751029481677914122']
     message.react(reactionIds[Math.floor(Math.random() * reactionIds.length)])
   }
+  if (message.author.id === '214807903129960448' && Math.random() < 0.05) {
+    const emotes = ['🆗', '⬛', '🇿', '🇴', '🅾️', '🇲', '🇪', '🇷'];
+    try {
+      emotes.forEach((value) => {
+        await message.react(value)
+      })
+		} catch (error) {
+			console.error('One of the emojis failed to react.');
+		}
+  }
+  if (message.author.id === '342948106985537539' && message.content.match(/rust/i) {
+    const emotes = [ '🇼', '🇭', '🇴', '⬛', '🇸', '🇦', '🇮', '🇩', '◾', '🇷', '🇺', '🇸', '🇹', '⁉️']
+    try {
+      emotes.forEach((value) => {
+        await message.react(value)
+      })
+		} catch (error) {
+			console.error('One of the emojis failed to react.');
+		}
+  }
 
   const embed = (props, messageProps?) => ({
     ...messageProps,
