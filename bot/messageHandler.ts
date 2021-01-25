@@ -23,7 +23,7 @@ export default ({
   if (message.author.bot) return
 
  if (message.author.id === '214807903129960448') {
-    message.react('751029481677914122')
+    message.react('788714191669821470')
  }
 
   const embed = (props, messageProps?) => ({
